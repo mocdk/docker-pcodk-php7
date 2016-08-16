@@ -1,5 +1,6 @@
 FROM php:7-fpm
 
+MAINTAINER Jan-Erik Revsbech <jer@peytz.dk>
 RUN apt-get update && apt-get install -y curl wget git zlib1g-dev libicu-dev g++
 
 RUN echo 'date.timezone = Europe/Copenhagen' > /usr/local/etc/php/conf.d/date.ini
