@@ -1,11 +1,11 @@
 FROM php:7-fpm
 
 MAINTAINER Jan-Erik Revsbech <jer@peytz.dk>
-RUN apt-get update && apt-get install -y curl wget git zlib1g-dev libicu-dev g++
+RUN apt-get update && apt-get install -y curl wget git zlib1g-dev libicu-dev g++ libpng12-dev libjpeg-dev libmcrypt-dev libxml2-dev nano
 
 RUN echo 'date.timezone = Europe/Copenhagen' > /usr/local/etc/php/conf.d/date.ini
 
-RUN docker-php-ext-configure intl && docker-php-ext-install pdo pdo_mysql zip intl 
+RUN docker-php-ext-configure intl && docker-php-ext-install pdo pdo_mysql zip mysqli pcntl mcrypt soap gd
 
 ENV PHPREDIS_VERSION 3.0.0
 
