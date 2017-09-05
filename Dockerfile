@@ -1,4 +1,4 @@
-FROM php:7-fpm
+FROM php:7.0.14-fpm
 
 MAINTAINER Jan-Erik Revsbech <jer@peytz.dk>
 RUN apt-get update && apt-get install -y curl wget git zlib1g-dev libicu-dev g++ libpng12-dev libjpeg-dev libmcrypt-dev libxml2-dev nano vim
