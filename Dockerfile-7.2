@@ -5,6 +5,8 @@ RUN apt-get update && apt-get install -y curl wget git zlib1g-dev libicu-dev g++
 
 RUN echo 'date.timezone = Europe/Copenhagen' > /usr/local/etc/php/conf.d/date.ini
 RUN echo 'memory_limit = 512M' > /usr/local/etc/php/conf.d/memory.ini
+RUN echo 'upload_max_filesize = 100M' > /usr/local/etc/php/conf.d/upload_limit.ini
+RUN echo 'post_max_size = 100M' >> /usr/local/etc/php/conf.d/upload_limit.ini
 
 RUN docker-php-ext-configure intl && docker-php-ext-install pdo_mysql zip mysqli pcntl soap gd  gettext intl bcmath iconv 
 
